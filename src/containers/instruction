@@ -1,0 +1,17 @@
+이 폴더는 똑똑한 컴포넌트, 즉 클래스형 컴포넌트를 위한 폴더입니다.
+
+예)
+
+import react, { Component } from 'react';
+
+class App extends Component {
+  render(){
+    return(
+      <div>
+        Hello world!
+      </div>
+    );
+  }
+}
+
+export default App;

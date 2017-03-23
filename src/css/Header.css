@@ -1,0 +1,21 @@
+
+#random {
+  color: white;
+  font-size: 3vh;
+}
+
+.title {
+  width: 32vw;
+  height: 17vh;
+  margin-left: 22vw;
+}
+
+.title > h1 {
+  font-size: 8.5vh;
+  color: white;
+}
+
+.title > a {
+  text-decoration: none;
+  color: black;
+}
