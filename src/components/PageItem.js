@@ -6,14 +6,16 @@ const PageItem = ({pages}) => {
   return(
     <li>
       <div className="resultItem">
-        <h1>
-          {pages.title}
-        </h1>
         <h3>
-          {pages.extract}
+          {pages.title}
         </h3>
-        <Anchor href={pages.fullurl}
-                label='Show more on wikipedia!'/>
+        <h4>
+          {pages.extract}
+        </h4>
+        <Anchor
+            href={pages.fullurl}
+            label='Show more on wikipedia!'
+        />
       </div>
     </li>
   );
