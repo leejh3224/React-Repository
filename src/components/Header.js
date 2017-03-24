@@ -1,13 +1,17 @@
 import React from 'react';
 import '../css/Header.css';
 
-const Header = ({showTip}) => {
+const Header = () => {
   return(
     <div className="title">
-      <a id="random" href="https://en.wikipedia.org/wiki/Special:Random">
+      <a
+        href="https://en.wikipedia.org/wiki/Special:Random"
+      >
         read random articles here.
       </a>
-        <h1>WIKI MAN</h1>    
+      <h1>
+        WIKI MAN
+      </h1>
     </div>
   );
 };
