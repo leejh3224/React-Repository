@@ -10,36 +10,36 @@ class App extends Component {
     super(props);
 
     this.state = {
-      pages : [],
-      showTip : true
+      pages : []
     }
   }
 
-  dismissTip = (e) => {
-    e.stopPropagation();
-    this.setState({showTip : false});
-  }
-
   handleValueChange = (value) => {
-    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&maxlag=2&origin=*&prop=info%7Cextracts&titles=${value}&generator=allpages&utf8=1&formatversion=2&inprop=url&exsentences=3&exlimit=5&exintro=1&explaintext=1&exsectionformat=plain&gapprefix=${value}&gaplimit=20`;
+    let url = `https://en.wikipedia.org/w/api.php?action=query&format=json&
+        maxlag=2&origin=*&prop=info%7Cextracts&titles=${value}&
+        generator=allpages&utf8=1&formatversion=2&inprop=url&exsentences=3&
+        exlimit=5&exintro=1&explaintext=1&exsectionformat=plain&
+        gapprefix=${value}&gaplimit=20`,
+        page;
 
-    axios.get(url)
-      .then((response) => {
-        let page = response.data.query.pages;
-        this.setState({ pages : page });
-      }).catch((e) => {
-        console.log('error happened', e);
-        let errMsg = 'No result found!'
-        return errMsg;
-      });
+        axios.get(url).then((response) => {
+            page = response.data.query.pages;
+            this.setState({ pages : page });
+            console.log('gettingData');
+        }).catch((e) => {
+            console.log('error happened', e);
+        });
     }
 
   render(){
     return(
-      <div>
-        <Header showTip={this.state.showTip}/>
-        <SearchTab onValueChange={this.handleValueChange} pages={this.state.pages} />
-        <PageList pages={this.state.pages} />
+      <div className="app">
+        <Header />
+        <SearchTab
+            onValueChange={this.handleValueChange}
+            pages={this.state.pages} />
+        <PageList
+            pages={this.state.pages} />
       </div>
     );
   }
