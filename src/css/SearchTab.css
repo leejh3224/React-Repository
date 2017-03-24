@@ -1,9 +1,13 @@
 .searchBar {
-  margin: 0 auto;
-  width: 60vw;
+  color: white;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
 }
 
-.search {
-  margin-top: -0.4vh;
-  color: white;
+.grommetux-input {
+  width: 60vw;
 }
