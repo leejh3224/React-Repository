@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build" : "babel server --out-dir build --presets=es2015 && node build/main.js"
+    "build": "babel server --out-dir build --presets=es2015 && node build/main.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -30,7 +32,8 @@
     "react-hot-loader": "^3.0.0-beta.6",
     "react-router": "^3.0.2",
     "request": "^2.81.0",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-dev-server": "^2.4.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -52,5 +55,6 @@
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
-  }
+  },
+  "snyk": true
 }
